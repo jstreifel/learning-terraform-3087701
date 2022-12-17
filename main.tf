@@ -31,6 +31,7 @@ module "vpc" {
   }
 }
 
+
 resource "aws_instance" "blog" {
   ami           = data.aws_ami.app_ami.id
   instance_type = var.instance_type
@@ -44,7 +45,7 @@ resource "aws_instance" "blog" {
 
 module "blog_sg" {
   source  = "terraform-aws-modules/security-group/aws"
-  version = "4.13.0"
+  version = "4.16.2"
 
   name = "blog"
   vpc_id = module.vpc.public_subnets[0]
