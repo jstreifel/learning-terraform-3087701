@@ -36,7 +36,6 @@ resource "aws_instance" "blog" {
   instance_type = var.instance_type
 
   subnet_id = module.vpc.public_subnets[0]
-  cidr_block = "10.0.0.0/16"
   
   vpc_security_group_ids = [module.blog_sg.security_group_id]
 
